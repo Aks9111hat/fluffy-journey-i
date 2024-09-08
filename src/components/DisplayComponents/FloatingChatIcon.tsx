@@ -1,4 +1,6 @@
 // components/FloatingChatIcon.tsx
+"use client";
+
 import React, { useState } from 'react';
 import Chatbot from "@/components/FunctionalComponents/ChatBot";
 

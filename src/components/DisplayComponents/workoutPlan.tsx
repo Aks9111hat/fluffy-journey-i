@@ -1,10 +1,15 @@
+"use client";
+
 import axios from "axios";
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
-import Loader from "@/components/Loaders/Loader";
+// import Loader from "@/components/Loaders/Loader";
 import ExerciseStats from "@/components/FunctionalComponents/saveExerciseStats";
 import ExerciseStatsDisplay from "@/components/DisplayComponents/ExerciseStats";
+import dynamic from 'next/dynamic';
+
+const Loader = dynamic(() => import('@/components/Loaders/Loader'), { ssr: false });
 
 interface WorkoutPlanProps {
     email: any;
@@ -142,7 +147,7 @@ const UserWorkoutPlan: React.FC<WorkoutPlanProps> = ({ email }) => {
                                     {showExerciseStatsDisplay[exercise.exercise] && (
                                         <ExerciseStatsDisplay email={email} exerciseName={exercise.exercise} />
                                     )}
-                                    
+
                                 </div>
                             ))}
                         </div>

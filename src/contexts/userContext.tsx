@@ -1,5 +1,5 @@
 // contexts/UserContext.tsx
-"use client"
+"use client";
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import axios from 'axios';
 

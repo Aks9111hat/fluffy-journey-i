@@ -1,10 +1,12 @@
-"use client"
+"use client";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
-import Loader from "@/components/Loaders/Loader";
+// import Loader from "@/components/Loaders/Loader";
+import dynamic from 'next/dynamic';
 
+const Loader = dynamic(() => import('@/components/Loaders/Loader'), { ssr: false });
 
 interface WorkoutPlanProps {
     email: any;

@@ -1,3 +1,6 @@
+"use client";
+
+
 import { hatch } from 'ldrs'
 
 hatch.register()
