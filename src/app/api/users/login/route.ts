@@ -10,18 +10,6 @@ connect()
 
 export async function POST(request: NextRequest) {
     try {
-
-        // Add CORS headers
-        const responseHeaders = new Headers({
-            'Access-Control-Allow-Origin': 'http://localhost:3000', // Adjust this for your frontend
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        });
-
-        // Handle preflight request (OPTIONS method)
-        if (request.method === 'OPTIONS') {
-            return new NextResponse(null, { headers: responseHeaders, status: 204 });
-        }
         
         const reqBody = await request.json();
         const { email, password } = reqBody;
